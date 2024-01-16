@@ -84,7 +84,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       const InputDecoration(labelText: 'Repeat Password'),
                   keyboardType: TextInputType.text,
                   controller: authenticationController.repeatPassword,
-                  validator: requiredValidator,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Required';
+                    }
+                    if (value != authenticationController.password.text) {
+                      return 'Password don\'t match';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(
                   height: 25.0,
