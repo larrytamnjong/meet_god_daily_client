@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:meet_god_daily_client/constants/api_urls.dart';
 
@@ -21,7 +20,6 @@ class AuthenticationClient {
         throw Exception("Error occurred in request");
       }
     } catch (exception) {
-      debugPrint(exception.toString());
       return null;
     }
   }

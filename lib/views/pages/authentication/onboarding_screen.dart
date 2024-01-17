@@ -49,12 +49,12 @@ class OnboardingScreen extends StatelessWidget {
                         children: [
                           ElevatedButton(
                               onPressed: () {
-                                Get.to(const RegistrationScreen());
+                                Get.to(() => const RegistrationScreen());
                               },
                               child: const Text("Get started")),
                           TextButton(
                             onPressed: () {
-                              Get.to(const LoginScreen());
+                              Get.to(() => const LoginScreen());
                             },
                             child:
                                 const Text("Already have an account? login."),
