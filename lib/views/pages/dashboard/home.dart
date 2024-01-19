@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("Today",
-              style: largeHeadingStyle.copyWith(
-                  fontSize: 28.0, fontWeight: FontWeight.w600))),
+          title: const AppBarTitle(
+        title: "Today",
+      )),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       const HomePageHeaderImage(),
                       const SizedBox(height: 12.0),
-                      CustomSectionHeadingContainer(
+                      const CustomSectionHeadingContainer(
                           title: "Today's Devotional"),
                       const SizedBox(height: 18.0),
                       TodayDevotionTopic(topic: devotion.data!.devotionTitle),
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                   return const NoDevotionFound();
                 } else if (devotion.connectionState ==
                     ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator());
+                  return const Center(child: LinearProgressIndicator());
                 } else {
                   return const NoDevotionFound();
                 }

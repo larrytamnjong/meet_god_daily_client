@@ -10,25 +10,21 @@ class DevotionController extends GetxController {
     devotionClient = DevotionClient();
   }
 
-  var isLoadingDevotion = false.obs;
-
   Future<Devotion?> getTodayDevotion() async {
-    _startProgressIndicator();
     Devotion? todayDevotion = await devotionClient.getTodayDevotion(id: "7");
     if (todayDevotion != null) {
-      _stopProgressIndicator();
       return todayDevotion;
     } else {
-      _stopProgressIndicator();
       return null;
     }
   }
 
-  void _startProgressIndicator() {
-    isLoadingDevotion.value = true;
-  }
-
-  void _stopProgressIndicator() {
-    isLoadingDevotion.value = false;
+  Future<List<Devotion>?> getPastDevotions() async {
+    List<Devotion>? devotions = await devotionClient.getPastDevotions();
+    if (devotions != null) {
+      return devotions;
+    } else {
+      return null;
+    }
   }
 }

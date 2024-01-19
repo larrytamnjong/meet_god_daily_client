@@ -5,8 +5,8 @@ import '../styles/text_styles.dart';
 
 class CustomSectionHeadingContainer extends StatelessWidget {
   final String title;
-  double? fontSize = 16;
-  CustomSectionHeadingContainer(
+  final double? fontSize;
+  const CustomSectionHeadingContainer(
       {super.key, required this.title, this.fontSize});
 
   @override
@@ -19,12 +19,12 @@ class CustomSectionHeadingContainer extends StatelessWidget {
           color: Colors.lightGreen.withOpacity(0.2),
         ),
         height: 40.0,
-        width: MediaQuery.sizeOf(context).width / 2,
+        width: MediaQuery.sizeOf(context).width / 1.8,
         child: Center(
           child: Text(
             title,
             style: mediumTextStyle.copyWith(
-                fontSize: fontSize, fontWeight: FontWeight.w400),
+                fontSize: fontSize ?? 16, fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),
         ),

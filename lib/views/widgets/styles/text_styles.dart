@@ -20,3 +20,18 @@ TextStyle largeHeadingStyle = const TextStyle(
 );
 
 TextStyle fontFamilyOnly = const TextStyle(fontFamily: montserrat);
+
+class AppBarTitle extends StatelessWidget {
+  final String title;
+  const AppBarTitle({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(title,
+        style: largeHeadingStyle.copyWith(
+            fontSize: 28.0, fontWeight: FontWeight.w600));
+  }
+}

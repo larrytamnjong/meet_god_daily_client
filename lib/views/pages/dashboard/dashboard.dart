@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meet_god_daily_client/views/pages/dashboard/devotions.dart';
 import 'package:meet_god_daily_client/views/pages/dashboard/home.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -30,14 +31,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.church)),
+            icon: Icon(Icons.church),
             label: 'Devotions',
           ),
           NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.subscriptions),
-            ),
+            icon: Icon(Icons.subscriptions),
             label: 'Subscriptions',
           ),
           NavigationDestination(
@@ -50,28 +48,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         /// Home page
         const HomePage(),
 
-        /// Notifications page
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.notifications_sharp),
-                  title: Text('Notification 1'),
-                  subtitle: Text('This is a notification'),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.notifications_sharp),
-                  title: Text('Notification 2'),
-                  subtitle: Text('This is a notification'),
-                ),
-              ),
-            ],
-          ),
-        ),
+        /// Devotion Page
+        const PastDevotionsScreen(),
 
         /// Messages page
         ListView.builder(

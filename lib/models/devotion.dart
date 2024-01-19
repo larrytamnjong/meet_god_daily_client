@@ -35,3 +35,25 @@ class Devotion {
     );
   }
 }
+
+class MonthDevotions {
+  final String month;
+  final List<Devotion> devotions;
+
+  MonthDevotions({required this.month, required this.devotions});
+
+  factory MonthDevotions.fromJson(String month, List<dynamic> json) {
+    List<Devotion> devotions = json.map((m) => Devotion.fromJson(m)).toList();
+    return MonthDevotions(month: month, devotions: devotions);
+  }
+}
+
+List<MonthDevotions> organizeDevotionsByMonth(Map<String, dynamic> json) {
+  List<MonthDevotions> result = [];
+
+  json.forEach((month, devotions) {
+    result.add(MonthDevotions.fromJson(month, devotions));
+  });
+
+  return result;
+}

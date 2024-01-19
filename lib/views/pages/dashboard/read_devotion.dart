@@ -39,9 +39,11 @@ class ReadDevotion extends StatelessWidget {
               const SizedBox(height: 18.0),
               CustomBibleVerse(bibleVerse: devotion.bibleVerse),
               CustomSectionBody(message: devotion.bibleVerseMessage),
-              CustomSectionHeadingContainer(title: "Read", fontSize: 13.0),
+              const CustomSectionHeadingContainer(
+                  title: "Read", fontSize: 13.0),
               CustomSectionBody(message: devotion.devotionMessage),
-              CustomSectionHeadingContainer(title: "Prayer", fontSize: 13.0),
+              const CustomSectionHeadingContainer(
+                  title: "Prayer", fontSize: 13.0),
               CustomSectionBody(message: devotion.devotionPrayer),
             ],
           ),

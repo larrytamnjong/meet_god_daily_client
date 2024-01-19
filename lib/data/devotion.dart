@@ -12,7 +12,25 @@ class DevotionClient {
       if (response.statusCode == 200) {
         return Devotion.fromJson(jsonDecode(response.body));
       } else {
-        throw Exception("Error occurred in request");
+        return null;
+      }
+    } catch (exception) {
+      return null;
+    }
+  }
+
+  Future<List<Devotion>?> getPastDevotions() async {
+    try {
+      final response = await http.get(Uri.parse(pastDevotions));
+      if (response.statusCode == 200) {
+        List<dynamic> decodedData = jsonDecode(response.body);
+        List<Devotion> devotions = decodedData
+            .map((devotion) =>
+                Devotion.fromJson(devotion as Map<String, dynamic>))
+            .toList();
+        return devotions;
+      } else {
+        throw Exception("Error in getting past devotions");
       }
     } catch (exception) {
       return null;
