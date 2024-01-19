@@ -26,20 +26,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.home_outlined, size: 27),
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.church),
+            icon: Icon(Icons.church, size: 27),
             label: 'Devotions',
           ),
           NavigationDestination(
-            icon: Icon(Icons.subscriptions),
+            icon: Icon(Icons.subscriptions, size: 27),
             label: 'Subscriptions',
           ),
           NavigationDestination(
-            icon: Icon(Icons.person_2_rounded),
+            icon: Icon(Icons.person_2_rounded, size: 27),
             label: 'Profile',
           ),
         ],

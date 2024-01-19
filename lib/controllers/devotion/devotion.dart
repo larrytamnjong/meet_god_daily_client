@@ -19,8 +19,8 @@ class DevotionController extends GetxController {
     }
   }
 
-  Future<List<Devotion>?> getPastDevotions() async {
-    List<Devotion>? devotions = await devotionClient.getPastDevotions();
+  Future<List<MonthDevotions>?> getPastDevotions() async {
+    List<MonthDevotions>? devotions = await devotionClient.getPastDevotions();
     if (devotions != null) {
       return devotions;
     } else {

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../constants/image_paths.dart';
+import '../../../models/devotion.dart';
+import '../../../utils/date_fomatter.dart';
+import '../../pages/dashboard/read_devotion.dart';
 import '../styles/text_styles.dart';
 
 class CustomSectionHeadingContainer extends StatelessWidget {
@@ -51,6 +55,32 @@ class HomePageHeaderImage extends StatelessWidget {
       ),
       child: Image(
         image: AssetImage(ImagePaths.churchImage),
+      ),
+    );
+  }
+}
+
+class DevotionCard extends StatelessWidget {
+  final Devotion devotion;
+  const DevotionCard({
+    super.key,
+    required this.devotion,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        leading: const Icon(Icons.calendar_month),
+        title: Text(
+          formatDateString(devotion.messageDate),
+        ),
+        subtitle: Text(devotion.devotionTitle),
+        onTap: () {
+          Get.to(
+            () => ReadDevotion(devotion: devotion),
+          );
+        },
       ),
     );
   }

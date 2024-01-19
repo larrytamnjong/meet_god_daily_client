@@ -19,18 +19,16 @@ class DevotionClient {
     }
   }
 
-  Future<List<Devotion>?> getPastDevotions() async {
+  Future<List<MonthDevotions>?> getPastDevotions() async {
     try {
       final response = await http.get(Uri.parse(pastDevotions));
       if (response.statusCode == 200) {
-        List<dynamic> decodedData = jsonDecode(response.body);
-        List<Devotion> devotions = decodedData
-            .map((devotion) =>
-                Devotion.fromJson(devotion as Map<String, dynamic>))
-            .toList();
-        return devotions;
+        Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+        List<MonthDevotions> organizedDevotions =
+            organizeDevotionsByMonth(jsonResponse);
+        return organizedDevotions;
       } else {
-        throw Exception("Error in getting past devotions");
+        return null;
       }
     } catch (exception) {
       return null;
