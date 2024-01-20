@@ -27,7 +27,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       appBar: AppBar(
         title: Text(
           "Create Account",
-          style: fontFamilyOnly,
+          style: fontFamilyOnly.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
       body: Obx(
@@ -78,6 +78,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       controller: authenticationController.email,
                     ),
                     FormBuilderTextField(
+                      obscureText: true,
                       name: "Password",
                       decoration: const InputDecoration(labelText: 'Password'),
                       keyboardType: TextInputType.text,
@@ -85,6 +86,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       validator: requiredValidator,
                     ),
                     FormBuilderTextField(
+                      obscureText: true,
                       name: "Repeat Password",
                       decoration:
                           const InputDecoration(labelText: 'Repeat Password'),
@@ -105,7 +107,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                     ElevatedButton(
                         onPressed: authenticationController.registerUser,
-                        child: const Text("Register")),
+                        child: const Text("Create account")),
                   ],
                 ),
               ),

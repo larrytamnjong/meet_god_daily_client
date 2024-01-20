@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: Text(
           'Login',
-          style: fontFamilyOnly,
+          style: fontFamilyOnly.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
       body: Obx(
@@ -65,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: authenticationController.phone,
                     ),
                     FormBuilderTextField(
+                      obscureText: true,
                       name: "Password",
                       decoration: const InputDecoration(labelText: 'Password'),
                       keyboardType: TextInputType.text,
