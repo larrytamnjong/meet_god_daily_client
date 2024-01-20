@@ -16,6 +16,7 @@ class CustomSectionBody extends StatelessWidget {
     $message
     ''',
       style: mediumTextStyle,
+      textAlign: TextAlign.justify,
     );
   }
 }

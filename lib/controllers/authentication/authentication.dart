@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:meet_god_daily_client/data/authentication.dart';
+import 'package:meet_god_daily_client/utils/shared_preference.dart';
 import 'package:meet_god_daily_client/views/dialogs/snackbars.dart';
 import 'package:meet_god_daily_client/views/pages/authentication/login_screen.dart';
 
@@ -60,6 +61,7 @@ class AuthenticationController extends GetxController {
       User? loggedUser = await authenticationClient.login();
       if (loggedUser != null) {
         _stopProgressIndicator();
+        await SharedPreference.addToSharedPreferences(loggedUser);
         Get.off(() => const DashboardScreen());
       } else {
         _stopProgressIndicator();
@@ -68,6 +70,16 @@ class AuthenticationController extends GetxController {
                 "Oops please check your login details or network connection");
       }
     }
+  }
+
+  Future<User?> loadLoggedInUser() async {
+    User? user = await SharedPreference.getUserFromSharedPreference();
+
+    return user;
+  }
+
+  logOutUser() async {
+    await SharedPreference.logOutUser();
   }
 
   void _startProgressIndicator() {

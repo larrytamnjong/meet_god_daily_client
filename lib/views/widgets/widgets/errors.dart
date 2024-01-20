@@ -60,7 +60,7 @@ class InternalError extends StatelessWidget {
               ),
             ),
             Text(
-              "We encountered an error please review you internet connection",
+              "We encountered an error or could not find anything.",
               style: fontFamilyOnly,
               textAlign: TextAlign.center,
             ),

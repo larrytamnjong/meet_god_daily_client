@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:meet_god_daily_client/data/devotion.dart';
+import 'package:meet_god_daily_client/utils/shared_preference.dart';
 
 import '../../models/devotion.dart';
 
@@ -11,7 +12,9 @@ class DevotionController extends GetxController {
   }
 
   Future<Devotion?> getTodayDevotion() async {
-    Devotion? todayDevotion = await devotionClient.getTodayDevotion(id: "7");
+    String? userId = await SharedPreference.getUserId();
+    Devotion? todayDevotion =
+        await devotionClient.getTodayDevotion(id: userId!);
     if (todayDevotion != null) {
       return todayDevotion;
     } else {

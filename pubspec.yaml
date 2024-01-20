@@ -41,6 +41,8 @@ dependencies:
   form_field_validator: ^1.1.0
   modal_progress_hud_nsn: ^0.4.0
   custom_accordion: ^1.0.0
+  shared_preferences: ^2.2.2
+  another_flutter_splash_screen: ^1.2.0
 
 
 dev_dependencies:

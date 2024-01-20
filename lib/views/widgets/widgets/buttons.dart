@@ -15,7 +15,7 @@ class ReadDevotionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50.0,
+      height: 47.0,
       width: MediaQuery.sizeOf(context).width / 2,
       child: ElevatedButton(
         style: ButtonStyle(
@@ -26,9 +26,7 @@ class ReadDevotionButton extends StatelessWidget {
         child: Text(
           "Read",
           style: mediumTextStyle.copyWith(
-            color: Colors.white,
-            fontSize: 20.0,
-          ),
+              color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w600),
         ),
       ),
     );

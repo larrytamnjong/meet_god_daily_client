@@ -19,11 +19,6 @@ class _PastDevotionsScreenState extends State<PastDevotionsScreen> {
   DevotionController devotionController = DevotionController();
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
