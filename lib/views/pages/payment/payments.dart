@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:meet_god_daily_client/controllers/payment/payment.dart';
-import 'package:meet_god_daily_client/views/pages/dashboard/make_payment.dart';
+import 'package:meet_god_daily_client/views/pages/payment/make_payment.dart';
 import 'package:meet_god_daily_client/views/widgets/styles/text_styles.dart';
 import 'package:meet_god_daily_client/views/widgets/widgets/errors.dart';
 

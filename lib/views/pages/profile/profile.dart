@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:meet_god_daily_client/controllers/authentication/authentication.dart';
 import 'package:meet_god_daily_client/views/pages/authentication/onboarding_screen.dart';
-import 'package:meet_god_daily_client/views/pages/dashboard/privacy_policy.dart';
+import 'package:meet_god_daily_client/views/pages/profile/privacy_policy.dart';
 import 'package:meet_god_daily_client/views/widgets/styles/text_styles.dart';
 import 'package:meet_god_daily_client/views/widgets/widgets/containers.dart';
 

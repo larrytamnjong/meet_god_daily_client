@@ -62,7 +62,7 @@ class AuthenticationController extends GetxController {
       if (loggedUser != null) {
         _stopProgressIndicator();
         await SharedPreference.addToSharedPreferences(loggedUser);
-        Get.off(() => const DashboardScreen());
+        Get.offAll(() => const DashboardScreen());
       } else {
         _stopProgressIndicator();
         showSnackBarFailure(

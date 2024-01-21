@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meet_god_daily_client/views/pages/dashboard/devotions.dart';
-import 'package:meet_god_daily_client/views/pages/dashboard/home.dart';
-import 'package:meet_god_daily_client/views/pages/dashboard/profile.dart';
-import 'package:meet_god_daily_client/views/pages/dashboard/subscription.dart';
+import 'package:meet_god_daily_client/views/pages/devotion/devotions.dart';
+import 'package:meet_god_daily_client/views/pages/devotion/home.dart';
+import 'package:meet_god_daily_client/views/pages/payment/payments.dart';
+import 'package:meet_god_daily_client/views/pages/profile/profile.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});

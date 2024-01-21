@@ -17,7 +17,8 @@ class PaymentController extends GetxController {
   }
 
   Future<List<Payment>?> getPayments() async {
-    List<Payment>? payments = await paymentClient.getPayments(userId: 7);
+    String? userId = await SharedPreference.getUserId();
+    List<Payment>? payments = await paymentClient.getPayments(userId: userId);
     if (payments != null) {
       return payments;
     } else {

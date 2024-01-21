@@ -35,7 +35,6 @@ class _SplashScreenState extends State<SplashScreen> {
       animationDuration: const Duration(seconds: 2000),
       asyncNavigationCallback: () async {
         var userId = await SharedPreference.getUserId();
-        await Future.delayed(const Duration(seconds: 3));
         if (userId != null) {
           Get.off(() => const DashboardScreen());
         } else {

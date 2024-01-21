@@ -6,7 +6,7 @@ import 'package:meet_god_daily_client/constants/api_urls.dart';
 import '../../models/payments.dart';
 
 class PaymentClient {
-  Future<List<Payment>?> getPayments({required int userId}) async {
+  Future<List<Payment>?> getPayments({required String? userId}) async {
     try {
       final response = await http.get(Uri.parse('$payment$userId'));
       if (response.statusCode == 200) {

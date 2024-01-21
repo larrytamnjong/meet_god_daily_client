@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../constants/image_paths.dart';
 import '../../../models/devotion.dart';
 import '../../../utils/date_fomatter.dart';
-import '../../pages/dashboard/read_devotion.dart';
+import '../../pages/devotion/read_devotion.dart';
 import '../styles/text_styles.dart';
 
 class CustomSectionHeadingContainer extends StatelessWidget {

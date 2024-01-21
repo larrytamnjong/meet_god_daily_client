@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../models/devotion.dart';
-import '../../pages/dashboard/read_devotion.dart';
+import '../../pages/devotion/read_devotion.dart';
 import '../styles/text_styles.dart';
 
 class ReadDevotionButton extends StatelessWidget {
