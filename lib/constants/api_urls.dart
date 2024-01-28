@@ -7,3 +7,4 @@ String todayDevotion = '$rootUrl/Devotion/GetTodaysDevotion.php?id=';
 String pastDevotions = '$rootUrl/Devotion/GetPastDevotions.php';
 String payment = '$rootUrl/Payment/GetAllPaymentsForUser.php?id=';
 String initiatePaymentUrl = '$rootUrl/Payment/InitiatePayment.php';
+String OtpLoginUrl = '$rootUrl/User/OTPLogin.php';

@@ -15,9 +15,11 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   late AuthenticationController authenticationController;
+
   @override
   void initState() {
     authenticationController = Get.put(AuthenticationController());
+    authenticationController.checkWhatsAppInstalled();
     super.initState();
   }
 
@@ -59,7 +61,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       height: 25.0,
                     ),
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await authenticationController.startOtpless();
+                        },
                         child: const Text("Proceed to Login")),
                   ],
                 ),
