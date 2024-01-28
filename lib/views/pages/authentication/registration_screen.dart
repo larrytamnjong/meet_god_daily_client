@@ -64,8 +64,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                     FormBuilderTextField(
                       name: "Phone number",
-                      decoration:
-                          const InputDecoration(labelText: 'Phone number'),
+                      decoration: InputDecoration(
+                        labelText: 'Phone number',
+                        hintText:
+                            "We highly recommend using your WhatsApp number",
+                        hintStyle: mediumTextStyle.copyWith(fontSize: 11),
+                      ),
                       keyboardType: TextInputType.phone,
                       validator: phoneValidator,
                       controller: authenticationController.phone,

@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
-import 'package:meet_god_daily_client/utils/validator.dart';
-import 'package:meet_god_daily_client/views/pages/authentication/forgot_password.dart';
 import 'package:meet_god_daily_client/views/widgets/styles/text_styles.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../controllers/authentication/authentication.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class ForgotPasswordScreen extends StatefulWidget {
+  const ForgotPasswordScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   late AuthenticationController authenticationController;
   @override
   void initState() {
@@ -28,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Login',
+          'WhatsApp Login',
           style: fontFamilyOnly.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
@@ -51,39 +49,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 12.0),
                     Text(
-                      "Fill in your details below to sign in and connect with God",
+                      "Please be ready to provide the WhatApp number you used during registration in order to recover your account.",
                       style: mediumTextStyle,
                     ),
                     const SizedBox(
                       height: 15.0,
                     ),
-                    FormBuilderTextField(
-                      name: "Phone number",
-                      decoration:
-                          const InputDecoration(labelText: 'Phone number'),
-                      keyboardType: TextInputType.phone,
-                      validator: phoneValidator,
-                      controller: authenticationController.phone,
-                    ),
-                    FormBuilderTextField(
-                      obscureText: true,
-                      name: "Password",
-                      decoration: const InputDecoration(labelText: 'Password'),
-                      keyboardType: TextInputType.text,
-                      validator: requiredValidator,
-                      controller: authenticationController.password,
-                    ),
                     const SizedBox(
                       height: 25.0,
                     ),
                     ElevatedButton(
-                        onPressed: authenticationController.logUserIn,
-                        child: const Text("Login")),
-                    TextButton(
-                        onPressed: () {
-                          Get.off(() => const ForgotPasswordScreen());
-                        },
-                        child: const Text('Forgot password?'))
+                        onPressed: () {},
+                        child: const Text("Proceed to Login")),
                   ],
                 ),
               ),
