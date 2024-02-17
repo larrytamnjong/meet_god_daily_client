@@ -41,10 +41,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const CircleAvatar(
-                      radius: 60.0,
+                      radius: 55.0,
                       child: Icon(
                         Icons.person,
-                        size: 60.0,
+                        size: 55.0,
                       ),
                     ),
                     const SizedBox(
@@ -72,10 +72,18 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     TextButton(
-                        onPressed: () {
-                          Get.to(() => const PrivacyPolicy());
-                        },
-                        child: const Text("Read privacy policy"))
+                      onPressed: () {
+                        Get.to(() => const PrivacyPolicy());
+                      },
+                      child: const Text("Read privacy policy"),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      "Please contact us at P.O. Box 1, Bamenda NWR, Cameroon",
+                      style: mediumTextStyle.copyWith(
+                          color: Colors.grey, fontSize: 12),
+                      textAlign: TextAlign.center,
+                    )
                   ],
                 );
               }),

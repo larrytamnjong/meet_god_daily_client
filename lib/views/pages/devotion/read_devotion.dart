@@ -45,6 +45,16 @@ class ReadDevotion extends StatelessWidget {
               const CustomSectionHeadingContainer(
                   title: "Prayer", fontSize: 13.0),
               CustomSectionBody(message: devotion.devotionPrayer),
+              devotion.prayerPoint == ""
+                  ? const SizedBox()
+                  : Column(
+                      children: [
+                        const CustomBibleVerse(
+                            bibleVerse:
+                                "Pray for the Cameroon Baptist Convention (CBC)"),
+                        CustomSectionBody(message: devotion.prayerPoint),
+                      ],
+                    ),
             ],
           ),
         ),

@@ -8,6 +8,7 @@ class Devotion {
   String devotionPrayer;
   String devotionWriter;
   String creationDate;
+  String prayerPoint;
 
   Devotion({
     required this.id,
@@ -19,20 +20,21 @@ class Devotion {
     required this.devotionPrayer,
     required this.devotionWriter,
     required this.creationDate,
+    required this.prayerPoint,
   });
 
   factory Devotion.fromJson(Map<String, dynamic> json) {
     return Devotion(
-      id: json['id'] ?? "",
-      bibleVerse: json['bible_verse'] ?? "",
-      bibleVerseMessage: json['bible_verse_message'] ?? "",
-      devotionTitle: json['devotion_title'] ?? "",
-      messageDate: json['message_date'] ?? "",
-      devotionMessage: json['devotion_message'] ?? "",
-      devotionPrayer: json['devotion_prayer'] ?? "",
-      devotionWriter: json['devotion_writer'] ?? "",
-      creationDate: json['creation_date'] ?? "",
-    );
+        id: json['id'] ?? "",
+        bibleVerse: json['bible_verse'] ?? "",
+        bibleVerseMessage: json['bible_verse_message'] ?? "",
+        devotionTitle: json['devotion_title'] ?? "",
+        messageDate: json['message_date'] ?? "",
+        devotionMessage: json['devotion_message'] ?? "",
+        devotionPrayer: json['devotion_prayer'] ?? "",
+        devotionWriter: json['devotion_writer'] ?? "",
+        creationDate: json['creation_date'] ?? "",
+        prayerPoint: json['prayer_point'] ?? "");
   }
 }
 

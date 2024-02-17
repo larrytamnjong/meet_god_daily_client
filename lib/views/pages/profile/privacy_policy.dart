@@ -12,19 +12,70 @@ class PrivacyPolicy extends StatelessWidget {
           title: "Privacy policy",
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
+      body: const Padding(
+        padding: EdgeInsets.all(12.0),
         child: SingleChildScrollView(
-          child: Text(
-            '''
-            Lorem ipsum dolor sit amet consectetur adipiscing elit elementum, tristique varius himenaeos dictumst velit arcu dignissim, non in consequat dictum mollis aliquet class. Nullam litora montes ligula facilisi primis fames nam curabitur tristique, est torquent aliquam urna etiam magna turpis. Erat aenean pretium lacinia est litora imperdiet netus, molestie et vel ut nec platea nascetur, praesent gravida parturient etiam libero mollis. Duis iaculis vel imperdiet turpis risus fringilla pharetra orci, tempus velit volutpat cum porttitor litora commodo suspendisse, sociosqu scelerisque euismod sem torquent in aliquet. Nulla velit condimentum integer dis odio curae mi venenatis felis, suscipit potenti feugiat cursus ornare viverra quis ac metus rutrum, diam ante phasellus tortor pretium augue urna primis. Massa imperdiet morbi urna aptent ornare senectus nostra gravida, aliquam nisl sem sollicitudin orci eros ultricies ullamcorper quisque, dui faucibus fringilla suspendisse lacus donec mollis conubia, auctor tortor dapibus arcu duis curae erat. Suscipit nostra condimentum dapibus potenti mi posuere, odio quam est eleifend aenean tempus, sollicitudin tristique ad auctor magnis.
-
-Condimentum senectus at ullamcorper lectus mus nisl porta posuere hendrerit, suspendisse aliquam lobortis id mollis arcu luctus torquent ut, conubia justo tristique ac metus sem sed ultrices. Nec urna himenaeos nunc dictumst nostra facilisis condimentum interdum, natoque congue euismod ornare per faucibus odio porttitor rutrum, nibh leo eros venenatis volutpat laoreet sagittis. Volutpat leo gravida quis sociis parturient interdum lectus tellus massa metus mattis quisque at, fames curae consequat ac vulputate lacinia class proin sollicitudin ante tempor. Cum natoque libero conubia gravida ornare eros erat aliquet, sociis suspendisse vitae sodales habitasse neque. Lectus et egestas vehicula fusce malesuada pharetra commodo, bibendum lacus natoque curabitur orci facilisi maecenas hac, augue convallis sagittis ornare quis fermentum. Rhoncus non donec molestie etiam cum nunc porttitor, blandit aliquet in vehicula congue. Cursus enim cubilia platea luctus himenaeos scelerisque venenatis urna mi, odio aenean praesent ullamcorper magnis purus porttitor curabitur ligula egestas, laoreet cum risus est taciti pharetra hac eget. Nisi tortor primis mattis sociosqu dis faucibus augue congue lacinia, magnis integer magna est sociis ut dictumst arcu, purus mus natoque velit tempor libero sodales venenatis.
-            ''',
-            style: mediumTextStyle.copyWith(fontSize: 15.0),
-            textAlign: TextAlign.justify,
+          child: Column(
+            children: [
+              Term(
+                text:
+                    'By using the Meeting God Daily app, you agree to the following terms and conditions:',
+              ),
+              Term(
+                text:
+                    'Acceptance of Terms: By downloading, installing, or using the Meeting God Daily app ("the App"), you agree to comply with and be bound by the following terms and conditions.',
+              ),
+              Term(
+                text:
+                    'User Registration: Users are required to register with a valid name, phone number, email address, and password to access the full features of the App. Users must provide accurate and up-to-date information during the registration process.',
+              ),
+              Term(
+                text:
+                    'Subscription and Payments: Users may subscribe to Meeting God Daily through in-app purchases. Subscriptions are billed on a recurring basis, and the user agrees to pay the specified subscription fee. No refunds will be provided for any subscription fees paid.',
+              ),
+              Term(
+                text:
+                    'Account Security: Users are responsible for maintaining the confidentiality of their account information, including their password. Users agree to notify Meeting God Daily immediately of any unauthorized use of their account or any other breach of security.',
+              ),
+              Term(
+                text:
+                    'Content Ownership: All content provided through the App, including daily devotionals, text, images, and audio, is the property of Meeting God Daily or its licensors. Users may not reproduce, distribute, or create derivative works from the content without the express consent of Meeting God Daily.',
+              ),
+              Term(
+                text:
+                    'User Conduct: Users agree to use the App in accordance with applicable laws and regulations. Any use of the App for illegal or unauthorized purposes is strictly prohibited. Users shall not engage in any conduct that disrupts the normal functioning of the App or infringes upon the rights of others.',
+              ),
+              Term(
+                text:
+                    'Account Deletion: Users can request the deletion of their account by contacting the support team. Meeting God Daily reserves the right to retain certain user data as required by law or for legitimate business purposes, even after an account has been deleted.',
+              ),
+              Term(
+                text:
+                    'Contact Information: If you have any questions about these terms and conditions or wish to delete your account, please contact us at P.O. Box 1, Bamenda NWR, Cameroon',
+              ),
+            ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Term extends StatelessWidget {
+  final String text;
+  const Term({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 3.0, bottom: 3.0),
+      child: Text(
+        text,
+        style: mediumTextStyle.copyWith(fontSize: 15.0),
+        textAlign: TextAlign.left,
       ),
     );
   }
